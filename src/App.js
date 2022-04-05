@@ -1,13 +1,14 @@
 
 import './App.css';
 import * as React from 'react';
-import {AdminDashboard} from './AdminDashboard';
+import {AdminDashboard} from './components/AdminDashboard';
 
 
 function App() {
   return (
     <div className="App">
       <AdminDashboard />
+    
     </div>
   );
 }

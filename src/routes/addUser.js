@@ -36,7 +36,7 @@ export function AddUser(){
 
     })
 
-    const history = useHistory();
+   
     const new_style = { minwidth: '30%' };
 
     return(

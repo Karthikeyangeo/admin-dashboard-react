@@ -1,7 +1,6 @@
 // Function to display the form and to collect the data
 
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import {useFormik} from  "formik";
@@ -27,17 +26,18 @@ const formValidationSchema = yup.object({
 
 export function AddUser(){
 
-    const{handleSubmit,values,handleBlur,handleChange,errors,touched} = useFormik({
-        initialValues :{firstName:'',lastName:'',city:'',phone:'',email:''},
+    const{handleSubmit,values,handleBlur,handleChange,errors,touched,resetForm} = useFormik({
+        initialValues :{fName:'',lName:'',city:'',phone:'',email:''},
         validationSchema : formValidationSchema,
         onSubmit:(newUser)=>{
             console.log('New User',newUser)
+            resetForm();
         }
 
     })
 
    
-    const new_style = { minwidth: '30%' };
+    const new_style = { width: '25%' };
 
     return(
         <Box
@@ -46,6 +46,10 @@ export function AddUser(){
         >
         <form onSubmit={handleSubmit}>
             <div className='addUser'>
+            <div className='addUser_header'>
+                <h1>Add User</h1>
+                <i class="fa-regular fa-address-card fa-xl"></i>
+            </div>
             <TextField
                 id="fName"
                 name="fName"

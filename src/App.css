@@ -7,12 +7,19 @@
   text-align: left;
  }
 
- .addUser{
+ .addUser,.addProduct{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 12px;
-  margin-left:5%;
   margin-top:20vh;
+}
+
+.addUser_header,.addProduct_header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap:15px;
 }

@@ -14,6 +14,7 @@ import AdminAppBar from './AdminAppBar';
 import { useHistory } from 'react-router-dom';
 import { Switch, Route } from "react-router-dom";
 import { AddUser } from '../routes/addUser';
+import { AddProducts } from '../routes/addProducts';
 
 
 
@@ -36,11 +37,13 @@ const drawerWidth = 240;
     const list1 = [
       {
         text:'Add User',
-        icon: <i className="fa-solid fa-user-plus  fa-lg" style={iconColor} onClick = {()=> history.push('/addUser')}></i>
+        icon: <i className="fa-solid fa-user-plus  fa-lg" style={iconColor} ></i>,
+        path:'/addUser'
       },
       {
         text:'Add Products',
-        icon: <i className="fa-solid fa-square-plus  fa-lg" style={secondaryText} size="lg"></i>
+        icon: <i className="fa-solid fa-square-plus  fa-lg" style={secondaryText} size="lg"></i>,
+        path:'/addProducts'
       }
     ];
 
@@ -93,7 +96,7 @@ const drawerWidth = 240;
         
         <Toolbar />
         <List>
-        <ListItem button key={'dashboard'}>
+        <ListItem button key={'dashboard'}component='a' href={'/'}>
               <ListItemIcon >
                 <SpeedIcon style={iconColor}/>
               </ListItemIcon>
@@ -104,7 +107,7 @@ const drawerWidth = 240;
         <List>
           <ListItemText secondary={'INTERFACE'}  variant="text" secondaryTypographyProps={{style :secondaryText}} ></ListItemText>
           {list1.map((e) => (
-            <ListItem button key={e.text}>
+            <ListItem button key={e.text} component='a' href={e.path}>
               <ListItemIcon>
                 {e.icon}
               </ListItemIcon>
@@ -131,6 +134,9 @@ const drawerWidth = 240;
           {/* Each route is case, eg. - case '/about': */}
           <Route path="/addUser">
             <AddUser />
+          </Route>
+          <Route path="/addProducts">
+            <AddProducts />
           </Route>
           <Route exact path ='/'>
             <h1>Hi</h1>

@@ -6,6 +6,11 @@ import TextField from '@mui/material/TextField';
 import {useFormik} from  "formik";
 import * as yup from 'yup';
 import Box from '@mui/material/Box';
+// import { useState } from 'react';
+// import { userData } from '../globalData';
+// import { UserTable } from './userTable';
+
+
 
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -23,14 +28,16 @@ const formValidationSchema = yup.object({
   
   });
 
-
+  
 export function AddUser(){
-
+   
     const{handleSubmit,values,handleBlur,handleChange,errors,touched,resetForm} = useFormik({
         initialValues :{fName:'',lName:'',city:'',phone:'',email:''},
         validationSchema : formValidationSchema,
         onSubmit:(newUser)=>{
             console.log('New User',newUser)
+            // setUserValue([...uservalue,newUser]);
+            // <UserTable uservalue={uservalue} setUserValue={setUserValue}/>
             resetForm();
         }
 

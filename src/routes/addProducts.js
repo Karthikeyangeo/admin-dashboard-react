@@ -137,7 +137,7 @@ const formValidationSchema = yup.object({
             </FormControl>
 
             <FormControl style={new_style}>
-              <InputLabel id="division">Division</InputLabel>
+              <InputLabel id="fuelType">Fuel Type</InputLabel>
               <Select
                 labelId="fuelType"
                 id="fuelType"

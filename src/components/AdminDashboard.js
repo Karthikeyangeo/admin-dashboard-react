@@ -15,6 +15,7 @@ import { useHistory } from 'react-router-dom';
 import { Switch, Route } from "react-router-dom";
 import { AddUser } from '../routes/addUser';
 import { AddProducts } from '../routes/addProducts';
+import {UserTable} from '../routes/userTable';
 
 
 
@@ -54,8 +55,9 @@ const drawerWidth = 240;
         icon: <i className="fa-solid fa-chart-line  fa-lg" style={secondaryText}></i>
       },
       {
-        text:'Tables',
-        icon: <i className="fa-solid fa-table  fa-lg" style={secondaryText}></i>
+        text:'User Tables',
+        icon: <i className="fa-solid fa-table  fa-lg" style={secondaryText}></i>,
+        path:'/userTable'
       }
     ]
     
@@ -119,7 +121,7 @@ const drawerWidth = 240;
         <List>
         <ListItemText secondary={'ADDONS'}  variant="text"  secondaryTypographyProps={{style :secondaryText}}></ListItemText>
           {list2.map((e) => (
-            <ListItem button key={e.text}>
+            <ListItem button key={e.text} component='a' href={e.path}>
               <ListItemIcon>
                 {e.icon}
               </ListItemIcon>
@@ -137,6 +139,9 @@ const drawerWidth = 240;
           </Route>
           <Route path="/addProducts">
             <AddProducts />
+          </Route>
+          <Route path="/userTable">
+            <UserTable />
           </Route>
           <Route exact path ='/'>
             <h1>Hi</h1>

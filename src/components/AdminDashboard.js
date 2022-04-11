@@ -12,10 +12,7 @@ import ListItemText from '@mui/material/ListItemText';
 import SpeedIcon from '@mui/icons-material/Speed';
 import AdminAppBar from './AdminAppBar';
 import { useHistory } from 'react-router-dom';
-import { Switch, Route } from "react-router-dom";
-import { AddUser } from '../routes/addUser';
-import { AddProducts } from '../routes/addProducts';
-import {UserTable} from '../routes/userTable';
+
 
 
 
@@ -130,23 +127,6 @@ const drawerWidth = 240;
           ))}
         </List>
       </Drawer>
-      
-
-      <Switch>
-          {/* Each route is case, eg. - case '/about': */}
-          <Route path="/addUser">
-            <AddUser />
-          </Route>
-          <Route path="/addProducts">
-            <AddProducts />
-          </Route>
-          <Route path="/userTable">
-            <UserTable />
-          </Route>
-          <Route exact path ='/'>
-            <h1>Hi</h1>
-          </Route>
-      </Switch>
     </Box>
   );
 }

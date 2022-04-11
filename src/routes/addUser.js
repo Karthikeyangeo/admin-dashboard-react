@@ -1,14 +1,16 @@
 // Function to display the form and to collect the data
 
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import {useFormik} from  "formik";
 import * as yup from 'yup';
 import Box from '@mui/material/Box';
-// import { useState } from 'react';
-// import { userData } from '../globalData';
-// import { UserTable } from './userTable';
+import { useState } from 'react';
+import { userData } from '../globalData';
+import { UserTable } from './userTable';
+import {useHistory} from 'react-router-dom';
+import { StudentContext } from '../App';
 
 
 
@@ -28,16 +30,18 @@ const formValidationSchema = yup.object({
   
   });
 
-  
+
 export function AddUser(){
-   
+    const history = useHistory();
+    const {uservalue,setUserValue}= useContext(StudentContext);
     const{handleSubmit,values,handleBlur,handleChange,errors,touched,resetForm} = useFormik({
         initialValues :{fName:'',lName:'',city:'',phone:'',email:''},
         validationSchema : formValidationSchema,
         onSubmit:(newUser)=>{
             console.log('New User',newUser)
-            // setUserValue([...uservalue,newUser]);
-            // <UserTable uservalue={uservalue} setUserValue={setUserValue}/>
+            setUserValue([...uservalue,newUser]);
+            <UserTable uservalue={uservalue} />
+            history.push('/userTable')
             resetForm();
         }
 

@@ -1,6 +1,26 @@
 
 // sample data for users
-const userData= [{
+
+const userData =[{
+  "fName": "Cary",
+ "lName": "Strass",
+ "city": "Darkovice",
+ "phone": 9462087334,
+ "email": "cstrass0@wix.com"
+}, {
+  "fName": "Paule",
+ "lName": "Oakenfull",
+ "city": "Katrineholm",
+ "phone": 8885334354,
+ "email": "poakenfull1@lycos.com"
+}, {
+  "fName": "Maurise",
+ "lName": "Benettelli",
+ "city": "Mafa",
+ "phone": 9017811400,
+ "email": "mbenettelli2@walmart.com"
+}];
+const userfullData= [{
      "fName": "Cary",
     "lName": "Strass",
     "city": "Darkovice",
@@ -62,4 +82,4 @@ const userData= [{
     "email": "eanthony9@google.de"
   }];
 
-  export {userData};
+  export {userData,userfullData};

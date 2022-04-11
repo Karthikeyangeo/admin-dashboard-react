@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
-import { userData } from '../globalData';
-import { string } from 'yup';
+import { StudentContext } from '../App';
+import { useContext } from 'react';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -26,7 +26,7 @@ const columns = [
 
 
  function UserTable() {
-    const [uservalue,setUserValue]= React.useState(userData)
+    const {uservalue,setUserValue}= useContext(StudentContext);
     //for providing id for the table based on the index value
     for(let i=0;i<uservalue.length;i++){
         uservalue[i].id=i+1;
@@ -38,7 +38,7 @@ const columns = [
         component="main"
         sx={{ flexGrow: 1, bgcolor: 'background.default', m:3,mt:15 }}
         >
-            <div style={{ height: 400, width: '100%'}}>
+            <div style={{ height: 400, width: '80%',paddingLeft:55}}>
             <DataGrid
                 rows={uservalue}
                 columns={columns}

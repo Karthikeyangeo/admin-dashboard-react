@@ -33,6 +33,7 @@ const formValidationSchema = yup.object({
             newProduct.modelyear = modelyear.getUTCFullYear();  //to get only year
             console.log('New Product',newProduct)
             resetForm();
+            resetSelectFields();
         }
 
     })
@@ -59,6 +60,10 @@ const formValidationSchema = yup.object({
 
     }
    
+    const resetSelectFields = () => {
+        setCarType('')
+        setFuelType('')
+    }
 
     return(
         <Box

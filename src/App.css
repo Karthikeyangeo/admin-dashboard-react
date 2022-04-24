@@ -18,6 +18,11 @@
   margin-top:20vh;
 }
 
+.userTable{
+  display: flex;
+  margin-left:15%;
+}
+
 .addUser_header,.addProduct_header{
   display: flex;
   flex-wrap: wrap;

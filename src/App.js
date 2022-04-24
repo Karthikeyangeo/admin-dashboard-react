@@ -40,7 +40,6 @@ function App() {
               <div className='homePage'>
               <h1>Hi</h1>
               </div>
-              
             </Route>
           </StudentContext.Provider>
       </Switch>

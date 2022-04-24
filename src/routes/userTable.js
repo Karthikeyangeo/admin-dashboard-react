@@ -36,9 +36,10 @@ const columns = [
     return (
         <Box
         component="main"
+       
         sx={{ flexGrow: 1, bgcolor: 'background.default', m:10,mt:15 }}
         >
-            <div style={{ height: 400, width: '80%',paddingLeft:55}}>
+            <div className='userTable' style={{ height: 400, width: '80%',paddingLeft:55}}>
             <DataGrid
                 rows={uservalue}
                 columns={columns}

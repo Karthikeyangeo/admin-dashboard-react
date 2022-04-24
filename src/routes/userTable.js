@@ -26,7 +26,7 @@ const columns = [
 
 
  function UserTable() {
-    const {uservalue,setUserValue}= useContext(StudentContext);
+    const {uservalue}= useContext(StudentContext);
     //for providing id for the table based on the index value
     for(let i=0;i<uservalue.length;i++){
         uservalue[i].id=i+1;

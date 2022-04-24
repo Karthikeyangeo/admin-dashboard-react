@@ -6,7 +6,9 @@
   padding-left:15px;
   text-align: left;
  }
-
+.homePage{
+  margin-top: 15vh;
+}
  .addUser,.addProduct{
   display: flex;
   flex-direction: column;

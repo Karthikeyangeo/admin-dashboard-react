@@ -28,12 +28,12 @@ function AdminDashboard(props) {
   };
 
   const secondaryText = {
-    color: 'black'
+    color: 'white'
   }
 
   // format for changing color in Material UI Icons
   const iconColor ={
-    color: 'black',
+    color: 'white',
     size:'larger'
   }
   const list1 = [
@@ -64,10 +64,16 @@ function AdminDashboard(props) {
   
   const drawer = (
     <div>
-      <Toolbar />
-      <Divider />
+     
+     {/* Car Symbol */}
+      {/* <List>
+        <ListItemIcon style={{color: 'white'}} className='carSymbol'>
+          <i class="fa-solid fa-car-side fa-2xl"></i>
+        </ListItemIcon>
+      </List>
+      */}
       <List>
-        <ListItem button key={'dashboard'}component='a' href={'/'}>
+        <ListItem button key={'dashboard'}component='a' href={'/'} style={secondaryText}>
               <ListItemIcon >
                 <SpeedIcon style={iconColor}/>
               </ListItemIcon>
@@ -82,7 +88,7 @@ function AdminDashboard(props) {
               <ListItemIcon>
                 {e.icon}
               </ListItemIcon>
-              <ListItemText primary={e.text} />
+              <ListItemText primary={e.text} style={secondaryText}/>
             </ListItem>
           ))}
         </List>
@@ -90,7 +96,7 @@ function AdminDashboard(props) {
         <List>
         <ListItemText secondary={'ADDONS'}  variant="text"  secondaryTypographyProps={{style :secondaryText}}></ListItemText>
           {list2.map((e) => (
-            <ListItem button key={e.text} component='a' href={e.path}>
+            <ListItem button key={e.text} component='a' href={e.path} style={secondaryText}>
               <ListItemIcon>
                 {e.icon}
               </ListItemIcon>
@@ -144,7 +150,8 @@ function AdminDashboard(props) {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth ,background:'#1976D2'},
+            
           }}
         >
           {drawer}
@@ -153,7 +160,8 @@ function AdminDashboard(props) {
           variant="permanent"
           sx={{
             display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth,background:'#1976D2' },
+            
           }}
           open
         >

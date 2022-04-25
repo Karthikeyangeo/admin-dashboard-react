@@ -36,6 +36,13 @@ function AdminDashboard(props) {
     color: 'white',
     size:'larger'
   }
+
+  const headingStyle={
+    color: 'white',
+    display:'flex',
+    justifyContent:'flex-start',
+    paddingLeft:'3%'
+  }
   const list1 = [
     {
       text:'Add User',
@@ -82,7 +89,7 @@ function AdminDashboard(props) {
         </List>
         <Divider />
       <List>
-          <ListItemText secondary={'INTERFACE'}  variant="text" secondaryTypographyProps={{style :secondaryText}} ></ListItemText>
+          <ListItemText secondary={'INTERFACE'}  variant="text" secondaryTypographyProps={{style:headingStyle}} ></ListItemText>
           {list1.map((e) => (
             <ListItem button key={e.text} component='a' href={e.path}>
               <ListItemIcon>
@@ -94,7 +101,7 @@ function AdminDashboard(props) {
         </List>
         <Divider />
         <List>
-        <ListItemText secondary={'ADDONS'}  variant="text"  secondaryTypographyProps={{style :secondaryText}}></ListItemText>
+        <ListItemText secondary={'ADDONS'}  variant="text"  secondaryTypographyProps={{style :headingStyle}}></ListItemText>
           {list2.map((e) => (
             <ListItem button key={e.text} component='a' href={e.path} style={secondaryText}>
               <ListItemIcon>

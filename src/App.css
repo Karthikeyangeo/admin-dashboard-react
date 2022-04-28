@@ -2,14 +2,11 @@
   text-align: center;
 }
 
-.css-83ijpv-MuiTypography-root{
-  display: flex;
-  text-align: start;
-  padding-left: 3%;
- }
 .homePage{
   margin-top: 15vh;
 }
+
+/* User and Product forms */
  .addUser,.addProduct{
   display: flex;
   flex-direction: column;
@@ -19,11 +16,13 @@
   margin-top:20vh;
 }
 
+/* User Table  */
 .userTable{
   display: flex;
   margin-left:15%;
 }
 
+/* Header for add user and add products forms */
 .addUser_header,.addProduct_header{
   display: flex;
   flex-wrap: wrap;
@@ -31,14 +30,3 @@
   align-items: center;
   gap:15px;
 }
-/* .css-1fajery-MuiDataGrid-root .MuiDataGrid-columnHeaderTitleContainer ,.MuiDataGrid-cellContent{
-  padding: 0px 20px;
-  text-align: center;
-  justify-content: center;
-}
-
-.MuiDataGrid-colCellTitle {
-  display: block;
-  text-align:center;
-  width: 100%;
-} */
